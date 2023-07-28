@@ -1,3 +1,38 @@
+# Wtf
+Below, under the People-Counting-in-Real-Time section, you'll find the technical details of the project. This section though is for my own thoughts on the project and what the next steps are.
+
+## So what am I building?
+I'm building a system, that given a video stream of an audience of people, detects the people's movements, the number of people, and a few other parameters, and adapts the music based on those parameters.
+
+To begin with, I'll be using a video stream, and measuring to things:
+* The BPM that the people are dancing to
+* The number of people dancing
+
+Then, I'll be using those two parameters to adapt the music.
+
+## Why am I building this?
+Cause why not?
+
+Actually, it started with an idea that came to mind in Sadlers Wells. While sitting in the audience waiting for a show to start, the house lights were still on and we all waited patiently.
+After a minute or so, I heard someone sneezing in the audience, and immediately thereafter the house lights turned off and the show began.
+It was like a lightbulb moment - the connection between the audience and the show is two way - the audience affects the show just as much as the show affects the audience.
+
+This project is one of the ways I'm exploring that connection.
+
+## How am I building this?
+Using OpenCV, and maybe Sardine, but one idea that came up is to use Soundcloud to do a BPM search, and then use the Soundcloud API to play the music. 
+
+## Next steps
+* [ ] Get a video stream of people dancing
+* [ ] Get the BPM of the people dancing
+  * This is kind of working inside `people_counter.frequency_measurement`, though the bpm is very crude. We need:
+  * [ ] A moving average of the last two minutes, to detect bpm over a large period of time
+  * [ ] Variance of the last two minutes, to detect if the bpm is useful - if the variance is too high, then the bpm is not useful
+* [ ] Get the number of people dancing
+* [ ] Integrate with Soundcloud and do a BPM search
+* [ ] Play the music using the Soundcloud API
+
+
 # People-Counting-in-Real-Time
 People Counting in Real-Time using live video stream/IP camera in OpenCV.
 
